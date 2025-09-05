@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:  #f5f5f5;
+    color: #333333;
+    margin: 0;
+    padding: 0rem 1rem; /* 横に余白 */
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #223a70;
+    margin-bottom: 1rem; /* 下に余白 */
+}
+
+/* UI */
+.input-container {
+    display: flex;
+    flex-wrap: nowrap; /* 折り返さない */
+    justify-content: flex-start; /* 左端から並べる */
+    align-items: center; /* 高さを合わせる */
+    gap: 10px; /* 子要素の間に隙間を設定 */
+    margin-bottom: 2rem; /* 下側に余白 */
+    background-color: #ffffff;
+    padding: 1.5rem; /* 内側に余白 */
+    border-radius: 12px; /* 角を丸く */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* 影を付ける */
+    width: 100%; /* 親要素(body)の100％にする */
+    max-width: 1000px; /* 大きな画面でもデザインが崩れないように */
+    overflow-x: auto; /* スクロールバーを表示 */
+    box-sizing: border-box; /* 親要素の中からはみ出さないようにする */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    background-color: #f0f0f0;
+    border: 1px solid #dcdcdc; /* 境界線 */
+    color: #333333;
+    padding: 12px; /* 内側に余白 */
+    border-radius: 8px; /* 角を丸く */
+    font-size: 1rem;
+    flex-grow: 1; /* 余白を均等に埋める */
+    min-width: 150px; /* 入力欄が小さくなりすぎないように */
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+button {
+    flex-shrink: 0; /* 縮小しないように */
+    background-color: #0067C0;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #074770;
+}
+
+/* カウントダウン項目 */
+.countdown-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* 子要素を両端に配置 */
+    align-items: center;
+    box-shadow:  0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out; /* 加速して減速 */
+}
+
+.countdown-item:hover {
+    transform: scale(1.02); /* 1.02倍に */
+}
+
+.countdown-content {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    gap: 5px;
+}
+
+.date-and-countdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* イベント名 */
+.countdown-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #555555;
+}
+
+/* 日付 */
+.countdown-content p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2e7aad;
+}
+
+.delete-button {
+    background-color: #ff4b00;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #b52526;
+}
+
+/* 残り時間を右寄せ、大きく */
+p[id^="countdown-"] {
+/* p[id^="countdown-"]、id属性の値がcountdown-で始まるすべての<p>要素を選択 */
+    margin: 0;
+    min-width: 155.675px; /* 残り2桁時間の時の最大の幅 */
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #ff4b00;
+    padding: 5px;
+}
